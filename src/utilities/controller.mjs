@@ -44,7 +44,7 @@ async function getOneMovie() {
     try {
       let url = `http://localhost:3000/api/movies/${id}`;
   
-      formData.price = '$' + formData.price;
+    //   formData.price = '$' + formData.price;
   
       let res = await axios.put(url, formData);
   
