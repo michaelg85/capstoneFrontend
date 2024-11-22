@@ -1,5 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import Nav from './components/Nav';
+import Home from './pages/Home';
+import Search from './pages/Search';
+import Help from './pages/Help';
+import NotFound from './pages/NotFound';
+
 
 function App() {
 
@@ -7,9 +13,9 @@ function App() {
     <main>
       <Nav />
       <Routes>
-        <Route path='/' element={<FilterableTable />} />
-        <Route path='/addMovie' element={<CreateForm />} />
-        <Route path='/updateMovie/:id' element={<UpdateForm />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/search' element={<Search />} />
+        <Route path='/help' element={<Help />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </main>
