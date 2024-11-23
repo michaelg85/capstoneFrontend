@@ -38,12 +38,10 @@ export default function Home() {
 return (
     <>
         <Form moviesearch={getMovie} />
-        {/* <MovieDisplay movie={movie} /> */}
-        {/* <MovieChecklist movies={movies} /> */}
-        <ACTIONS movie={movie} />
+        <MovieDisplay movie={movie} />
+        <MovieChecklist movies={movies} />
+        {/* <ACTIONS movie={movie} /> */}
     </>
   );
 }
 
-
-// export default Home;

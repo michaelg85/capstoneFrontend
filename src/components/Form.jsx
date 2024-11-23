@@ -26,7 +26,7 @@ export default function Form (props) {
         <h1>Settle it here!</h1>
         <h2>Each enter a movie and let the game decide...</h2>
         </div>
-            {/* <h1 style={{ color: "green" }}>Movie Search</h1>
+            <h1 style={{ color: "green" }}>Movie Search</h1>
             <form onSubmit={handleSubmit}>
                 <input
                 type="text"
@@ -36,7 +36,7 @@ export default function Form (props) {
                 />
                 <br/>
                 <input type="submit" value="Search" />
-            </form> */}
+            </form>
     </div>
     
   );
