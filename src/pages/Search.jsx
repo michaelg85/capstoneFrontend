@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Form from '../components/form';
-import MovieDisplay from '../components/MovieDisplay';
+import SearchMovieDisplay from '../components/SearchMovieDisplay';
 
 //Form
 export default function Search() {
@@ -27,7 +27,7 @@ export default function Search() {
     return (
         <>
             <Form moviesearch={getMovie} />
-            <MovieDisplay movie={movie} />
+            <SearchMovieDisplay movie={movie} />
         </>
       );
     }

@@ -5,7 +5,7 @@ export default function Nav() {
     <nav>
       <Link to={'/'}>Home</Link>
       {' | '}
-      <Link to={'/addMovie'}>Search</Link>
+      <Link to={'/search'}>Search</Link>
       {' | '}
       <Link to={'/addMovie'}>Help</Link>
       {' | '}

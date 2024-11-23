@@ -8,35 +8,7 @@ export default function MovieDisplay({ movie }){
           <h2>{movie.Genre}</h2>
           <img src={movie.Poster} alt={movie.Title} />
           <h2>Rated {movie.Rated} ~ {movie.Year}</h2>
-          </div>
-          <div style={{ color: "yellow", textAlign: "left" }}>
-          <h2>Plot <br/>{movie.Plot}</h2>
-          
-          <h2>Box Office Earnings <br/>{movie.BoxOffice}</h2>
-          <h2>Directed by <br/>{movie.Director}</h2>
-          <h2>Written by <br/>{movie.Writer}</h2>
-          <h2>Released <br/>{movie.Released}</h2>          
-          <h2>Awards <br/>{movie.Awards}</h2>
-          <h2>Metascore - {movie.Metascore}</h2>
-          <h2>IMDb Rating - {movie.imdbRating}</h2>
-          <h2>IMDb Votes - { movie.imdbVotes}</h2>
-          <h2>
-            <span style={{ fontSize: '24px' }}>IMDb ID - </span>
-            <span style={{ fontSize: '16px' }}>{movie.imdbID}</span>
-          </h2>
-
-          <h2>Country - {movie.Country}</h2>
-          <h2>Language - {movie.Language}</h2>
-          {/* <h2>Type - {movie.Type}</h2> */}
-          {/* <h2>DVD - {movie.DVD}</h2> */}
-          
-          {/* <h2>Production - {movie.Production}</h2> */}
-          {/* <h2>Website - {movie.Website}</h2> */}
         </div>
-        <br /><br />
-        <div>Metascore is considered the rating of a film. Scores are assigned to movie's reviews of large group of the world's most respected critics, and weighted average are applied to summarize their opinions range. The result is shown in single number that captures the essence of critical opinion in one Metascore.</div>
-        <br />
-        <div>An IMDb ID is a unique identifier for an entity on IMDb, such as a movie, TV series, episode, video game, or person</div>
         </>
       );
     };
