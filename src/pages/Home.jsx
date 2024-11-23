@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import Form from '../components/form';
 import MovieDisplay from '../components/MovieDisplay';
-import { getAllMovies } from '../utilities/controller.mjs'
+// import { getAllMovies } from '../utilities/controller.mjs';
 
 
 function Home() {
-    const [movie, setMovie] = useState(null);
+    const [movie, setMovie] = useState(null); //or [] ?
+    //Calls api key from .env
     let key = import.meta.env.VITE_apiKey
   // Function to get movies
   const getMovie = async(searchTerm) => {
@@ -21,25 +22,24 @@ function Home() {
 
     // This will run on the first render but not on subsquent renders
     useEffect(() => {
-      getMovie("Land Before Time");
+      getMovie("Superman");
     }, []);
   
     // async function getData() {
     //   let res = await getAllMovies();
     //   let newArr = res.sort((a, b) => a.category.localeCompare(b.category));
-    //   setInventory(newArr);
+    //   setMovie(newArr);
     // }
   
-    useEffect(()=>{
-      getMovie()
-    }, [])
+    // useEffect(()=>{
+    //   getMovie()
+    // }, [])
 
 
 return (
     <>
-        <Form />
-        <MovieDisplay />
-        <h3>Loading...</h3>
+        <Form moviesearch={getMovie} />
+        <MovieDisplay movie={movie} />
     </>
   );
 }

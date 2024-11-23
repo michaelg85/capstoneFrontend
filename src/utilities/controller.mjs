@@ -1,6 +1,17 @@
 import axios from 'axios';
 
 
+async function getAllMovies() {
+  try {
+    let url = 'http://localhost:3000/api/movies';
+
+    let res = await axios.get(url);
+
+    return res.data;
+  } catch (err) {
+    console.error(err);
+  }
+}
 
 async function createMovie(formData) {
   try {
@@ -15,18 +26,6 @@ async function createMovie(formData) {
     console.error(err);
   }
 }
-
-async function getAllMovies() {
-    try {
-      let url = 'http://localhost:3000/api/movies';
-  
-      let res = await axios.get(url);
-  
-      return res.data;
-    } catch (err) {
-      console.error(err);
-    }
-  }
 
 async function getOneMovie() {
     try {
@@ -67,8 +66,8 @@ async function deleteMovie(id) {
 }
 
 export {
-  createMovie,
   getAllMovies,
+  createMovie,
   getOneMovie,
   updateOneMovie,
   deleteMovie,
