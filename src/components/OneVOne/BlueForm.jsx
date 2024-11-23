@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Form(props) {
+export default function BlueForm(props) {
   // State to hold the data of our form
   const [formData, setFormData] = useState({
     searchterm: "",
@@ -16,27 +16,22 @@ export default function Form(props) {
     // Prevent page from refreshing on form submission
     event.preventDefault();
     // Pass the search term to moviesearch prop, which is App's getMovie function
-    props.moviesearch(formData.searchterm);
+    props.blueMoviesearch(formData.searchterm);
   };
 
   return (
-    <div>
-      <div className="title" style={{ color: "yellow" }}>
-        <h1>Settle it here!</h1>
-        <h2>Each enter a movie and let the game decide...</h2>
-
-        <h1>Movie Search</h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="searchterm"
-            onChange={handleChange}
-            value={formData.searchterm}
-          />
-          <br />
-          <input type="submit" value="Search" />
-        </form>
-      </div>
+    <div className="column right" style={{ color: "skyblue" }}>
+      <h2>The Blue Corner</h2>
+      <p>Good Luck!</p>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="searchterm"
+          onChange={handleChange}
+          value={formData.searchterm}
+        />
+        <input type="submit" value="submit" />
+      </form>
     </div>
   );
 }

@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
-import Form from '../components/form';
+import Form from '../components/Form';
 import MovieDisplay from '../components/MovieDisplay';
 import MovieChecklist from '../components/MovieChecklist';
-import { ACTIONS } from '../components/BlueList';
-// import { getAllMovies } from '../utilities/controller.mjs';
 
 //Form
 export default function Home() {
@@ -32,16 +30,13 @@ export default function Home() {
  
       ];
 
-  //BlueList
 
 
 return (
     <>
+        <MovieChecklist movies={movies} />
         <Form moviesearch={getMovie} />
         <MovieDisplay movie={movie} />
-        <MovieChecklist movies={movies} />
-        {/* <ACTIONS movie={movie} /> */}
     </>
   );
 }
-

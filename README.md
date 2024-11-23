@@ -29,10 +29,7 @@ added .env to a .gitignore file
 
 
 
-my wife and I love each other very much but when it comes to choosing whose movie to watch it can become quite contentious!
-input you list of up to ten movies and select which movies you'd like to enter into the ring, then let the app decide!
-if you let the app choose, you must watch it all the way through so "enter" with caution!
-another option is to let each other choose a predetermined ammount of movies from your partners list and then let the app decide!
+
 
 
 
