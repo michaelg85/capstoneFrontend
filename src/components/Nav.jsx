@@ -10,6 +10,7 @@ export default function Nav() {
       <Link to={'/addMovie'}>Help</Link>
       {' | '}
       <Link to={'/addMovie'}>About Us</Link>
+      <h1 style={{ fontSize: "60px", color: "yellow" }}>Whose Movie?!</h1>
     </nav>
   );
 }

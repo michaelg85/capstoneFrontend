@@ -22,7 +22,6 @@ export default function Form (props) {
   return (
     <div>
         <div className="title" style={{ color: "yellow" }}>
-        <h1 style={{ fontSize: "60px"}}>Whose Movie?!</h1>
         <h1>Settle it here!</h1>
         <h2>Each enter a movie and let the game decide...</h2>
         </div>

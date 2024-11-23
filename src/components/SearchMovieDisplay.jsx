@@ -1,4 +1,4 @@
-export default function MovieDisplay({ movie }){
+export default function SearchMovieDisplay({ movie }){
     // Function to return loaded JSX
     const loaded = () => {
       return (
@@ -38,4 +38,3 @@ export default function MovieDisplay({ movie }){
     // Ternary operator will determine which functions JSX we will return
     return movie ? loaded() : loading();
   }
-  
