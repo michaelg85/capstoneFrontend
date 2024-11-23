@@ -3,7 +3,7 @@ import './App.css';
 import Nav from './components/Nav';
 import Home from './pages/Home';
 import Search from './pages/Search';
-// import Help from './pages/Help';
+import Help from './pages/Help';
 import NotFound from './pages/NotFound';
 
 
@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/search' element={<Search />} />
-        {/* <Route path='/help' element={<Help />} /> */}
+        <Route path='/help' element={<Help />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </main>

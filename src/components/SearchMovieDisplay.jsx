@@ -36,7 +36,7 @@ export default function SearchMovieDisplay({ movie }){
         <div>Metascore is considered the rating of a film. Scores are assigned to movie's reviews of large group of the world's most respected critics, and weighted average are applied to summarize their opinions range. The result is shown in single number that captures the essence of critical opinion in one Metascore.
         </div>
         <br />
-        <div>An IMDb ID is a unique identifier for an entity on IMDb, such as a movie, TV series, episode, video game, or person
+        <div>An IMDb ID is a unique identifier for an entity on IMDb, such as a movie, TV series, episode, video game, or person.
         </div>
         </>
       );

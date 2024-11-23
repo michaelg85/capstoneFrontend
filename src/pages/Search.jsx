@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Form from '../components/form';
+import SearchMovieForm from '../components/SearchMovieForm';
 import SearchMovieDisplay from '../components/SearchMovieDisplay';
 
 //Form
@@ -21,12 +21,12 @@ export default function Search() {
 
     // This will run on the first render but not on subsquent renders
     useEffect(() => {
-      getMovie("Superman");
+      getMovie("The Land Before Time");
     }, []);
 
     return (
         <>
-            <Form moviesearch={getMovie} />
+            <SearchMovieForm moviesearch={getMovie} />
             <SearchMovieDisplay movie={movie} />
         </>
       );
