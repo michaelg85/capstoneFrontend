@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import Form from '../components/form';
 import MovieDisplay from '../components/MovieDisplay';
+import MovieChecklist from '../components/MovieChecklist';
+import { ACTIONS } from '../components/BlueList';
 // import { getAllMovies } from '../utilities/controller.mjs';
 
-
-function Home() {
+//Form
+export default function Home() {
     const [movie, setMovie] = useState(null); //or [] ?
     //Calls api key from .env
     let key = import.meta.env.VITE_apiKey
@@ -25,24 +27,23 @@ function Home() {
       getMovie("Superman");
     }, []);
   
-    // async function getData() {
-    //   let res = await getAllMovies();
-    //   let newArr = res.sort((a, b) => a.category.localeCompare(b.category));
-    //   setMovie(newArr);
-    // }
-  
-    // useEffect(()=>{
-    //   getMovie()
-    // }, [])
+  //Movie checklist
+   const movies = [
+ 
+      ];
+
+  //BlueList
 
 
 return (
     <>
         <Form moviesearch={getMovie} />
-        <MovieDisplay movie={movie} />
+        {/* <MovieDisplay movie={movie} /> */}
+        {/* <MovieChecklist movies={movies} /> */}
+        <ACTIONS movie={movie} />
     </>
   );
 }
 
 
-export default Home;
+// export default Home;
