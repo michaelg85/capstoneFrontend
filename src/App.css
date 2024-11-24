@@ -16,6 +16,11 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.heading 
+  {
+    line-height: 1; /* Adjust this value for desired spacing */
+  }
+
 button {
   background-color: #333333;
   color: #ffffff;
@@ -43,7 +48,7 @@ input {
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 6rem;
+  /* padding: 6rem; */
   text-align: center;
 }
 
@@ -64,11 +69,3 @@ input {
   margin: 5px;
   text-align: center;
 }
-
-
-.heading 
-  {
-    line-height: 1.2; /* Adjust this value for desired spacing */
-  }
-
-

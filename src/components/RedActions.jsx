@@ -52,7 +52,7 @@ export default function RedActions({ movie, dispatch }) {
 
 
 
-      <button
+      <button style={{ fontSize: '14px', padding: '5px 10px' }}
         onClick={() =>
           dispatch({ type: ACTIONS.DELETE_MOVIE, payload: { id: movie.id } })
         }movie
