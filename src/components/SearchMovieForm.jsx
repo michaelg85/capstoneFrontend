@@ -20,11 +20,9 @@ export default function SearchMovieForm (props) {
   };
 
   return (
-    <div>
-        <div className="title" style={{ color: "green" }}>
+    <div className="title" style={{ color: "green" }}>
         <h1>Movie Search</h1>
         <h2>Search with more detail here!</h2>
-        </div>
             <form onSubmit={handleSubmit}>
                 <input
                 type="text"

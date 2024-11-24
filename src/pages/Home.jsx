@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Form from '../components/Form';
 import MovieDisplay from '../components/MovieDisplay';
 import MovieChecklist from '../components/MovieChecklist';
+import { Link } from "react-router-dom";
 
 //Form
 export default function Home() {
@@ -34,9 +35,21 @@ export default function Home() {
 
 return (
     <>
-        <MovieChecklist movies={movies} />
         <Form moviesearch={getMovie} />
-        <MovieDisplay movie={movie} />
+        <div className="three-column-container">
+          <div class="column"><MovieChecklist movies={movies} /></div>
+          <div class="column"><MovieDisplay movie={movie} /></div>
+          <div class="column"><MovieChecklist movies={movies} /></div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div>
+          <h3 style={{ color: "gray" }}>
+            Try searching for movies in our <Link to="/search">search</Link>{" "}
+            tab, before adding them to your list!
+          </h3>
+        </div>
     </>
   );
 }

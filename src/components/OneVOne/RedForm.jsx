@@ -30,6 +30,7 @@ export default function RedForm(props) {
           onChange={handleChange}
           value={formData.searchterm}
         />
+        <br />
         <input type="submit" value="submit" />
       </form>
     </div>

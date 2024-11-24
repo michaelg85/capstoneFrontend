@@ -1,11 +1,70 @@
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+button {
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  /* /* margin-right: 20px; */
+  margin-bottom: 20px;
+  margin-left: 20px; */
+}
+
+input {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #555555;
+  padding: 8px;
+  border-radius: 5px;
+  margin-top: 0px;
+  /* margin-right: 20px; */
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 6rem;
   text-align: center;
 }
 
-/* .container {
+.oneContainer {
   display: flex;
   gap: 150px; /* Adds space between columns */
-} */
+}
+
+.three-column-container {
+  display: flex;
+  justify-content: space-between; /* Add space between columns */
+}
+
+.column {
+  flex: 1; /* Each column takes up equal width */
+  padding: 10px;
+  /* background-color: #f0f0f0; */
+  margin: 5px;
+  text-align: center;
+}
+
+
+.nav {
+  position: fixed;       /* Fixes the navbar to the screen */
+  top: 0;                /* Positions it at the very top */
+  left: 0;               /* Aligns it with the left side of the screen */
+  width: 100%;           /* Makes it span the full width of the screen */
+  background-color: #333; /* Example background color */
+  color: white;
+  padding: 10px 20px;
+  z-index: 1000;         /* Keeps the navbar on top of other content */
+}
+
+.main-content {
+  margin-top: 60px; /* Adjust to match the height of your navbar */
+}

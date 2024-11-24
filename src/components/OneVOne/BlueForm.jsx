@@ -30,6 +30,7 @@ export default function BlueForm(props) {
           onChange={handleChange}
           value={formData.searchterm}
         />
+        <br />
         <input type="submit" value="submit" />
       </form>
     </div>
