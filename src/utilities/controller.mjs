@@ -1,9 +1,8 @@
-import axios from 'axios';
-
+import axios from "axios";
 
 async function getAllMovies() {
   try {
-    let url = 'http://localhost:3000/api/movies';
+    let url = "http://localhost:3000/api/movies";
 
     let res = await axios.get(url);
 
@@ -15,7 +14,7 @@ async function getAllMovies() {
 
 async function createMovie(formData) {
   try {
-    let url = 'http://localhost:3000/api/movie';
+    let url = "http://localhost:3000/api/movie";
 
     // formData.price = '$' + formData.price;
 
@@ -28,30 +27,30 @@ async function createMovie(formData) {
 }
 
 async function getOneMovie() {
-    try {
-      let url = 'http://localhost:3000/api/movie/:id'; //This way?
-  
-      let res = await axios.get(url);
-  
-      return res.data;
-    } catch (err) {
-      console.error(err);
-    }
-  }
+  try {
+    let url = "http://localhost:3000/api/movie/:id"; //This way?
 
-  async function updateOneMovie(id, formData) {
-    try {
-      let url = `http://localhost:3000/api/movies/${id}`;
-  
-    //   formData.price = '$' + formData.price;
-  
-      let res = await axios.put(url, formData);
-  
-      return res.data;
-    } catch (err) {
-      console.error(err);
-    }
+    let res = await axios.get(url);
+
+    return res.data;
+  } catch (err) {
+    console.error(err);
   }
+}
+
+async function updateOneMovie(id, formData) {
+  try {
+    let url = `http://localhost:3000/api/movies/${id}`;
+
+    //   formData.price = '$' + formData.price;
+
+    let res = await axios.put(url, formData);
+
+    return res.data;
+  } catch (err) {
+    console.error(err);
+  }
+}
 
 async function deleteMovie(id) {
   try {
@@ -65,10 +64,4 @@ async function deleteMovie(id) {
   }
 }
 
-export {
-  getAllMovies,
-  createMovie,
-  getOneMovie,
-  updateOneMovie,
-  deleteMovie,
-};
+export { getAllMovies, createMovie, getOneMovie, updateOneMovie, deleteMovie };

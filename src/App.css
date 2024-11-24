@@ -16,10 +16,9 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.heading 
-  {
-    line-height: 1; /* Adjust this value for desired spacing */
-  }
+.heading {
+  line-height: 1; /* Adjust this value for desired spacing */
+}
 
 button {
   background-color: #333333;

@@ -1,6 +1,6 @@
-import {useState, useEffect} from "react";
+import { useState } from "react";
 
-export default function SearchMovieForm (props) {
+export default function SearchMovieForm(props) {
   // State to hold the data of our form
   const [formData, setFormData] = useState({
     searchterm: "",
@@ -20,19 +20,19 @@ export default function SearchMovieForm (props) {
   };
 
   return (
-    <div className="title" style={{ color: "green" }}>
-        <h1>Movie Search</h1>
-        <h2>Search for more details here!</h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                type="text"
-                name="searchterm"
-                onChange={handleChange}
-                value={formData.searchterm}
-                />
-                <input type="submit" value="Search" />
-            </form>
+    <div className="title" style={{ color: "yellow" }}>
+      <h1>Movie Search</h1>
+      <h2>Search for more details here!</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="searchterm"
+          onChange={handleChange}
+          value={formData.searchterm}
+        />
+        <br />
+        <input type="submit" value="Search" />
+      </form>
     </div>
-    
   );
 }

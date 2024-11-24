@@ -15,7 +15,9 @@ export default function RedActions({ movie, dispatch }) {
         }
       />
 
-      <span style={{ fontSize: '24px', color: movie.complete ? "pink" : "red" }}>
+      <span
+        style={{ fontSize: "24px", color: movie.complete ? "pink" : "red" }}
+      >
         {movie.name}
       </span>
 
@@ -28,7 +30,6 @@ export default function RedActions({ movie, dispatch }) {
         }
       ></input> */}
 
-
       {/* <button
         onClick={() =>
           dispatch({
@@ -40,8 +41,6 @@ export default function RedActions({ movie, dispatch }) {
         Completed
       </button> */}
 
-
-
       {/* <button
         onChange={() =>
           dispatch({ type: ACTIONS.EDIT_MOVIE, payload: { id: movie.id } })
@@ -50,12 +49,12 @@ export default function RedActions({ movie, dispatch }) {
         Edit
       </button> */}
 
-
-
-      <button style={{ fontSize: '14px', padding: '5px 10px' }}
+      <button
+        style={{ fontSize: "14px", padding: "5px 10px" }}
         onClick={() =>
           dispatch({ type: ACTIONS.DELETE_MOVIE, payload: { id: movie.id } })
-        }movie
+        }
+        movie
       >
         Delete
       </button>

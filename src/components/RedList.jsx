@@ -14,19 +14,15 @@ function reducer(movies, action) {
     case ACTIONS.ADD_MOVIE:
       return [...movies, newMovie(action.payload.name)];
 
-
-
     case ACTIONS.EDIT_MOVIE:
       return movies.map((movie) => {
         if (movie.id === action.payload.id) {
           // return { ...movie, '': action.payload.text };
         }
-          return add-movie;
+        return add - movie;
       });
 
-
-
-      case ACTIONS.TOGGLE_MOVIE:
+    case ACTIONS.TOGGLE_MOVIE:
       return movies.map((movie) => {
         if (movie.id === action.payload.id) {
           return { ...movie, complete: !movie.complete };
@@ -34,12 +30,10 @@ function reducer(movies, action) {
         return movie;
       });
 
-
-
     case ACTIONS.DELETE_MOVIE:
-      return movies.filter(movie => movie.id !== action.payload.id)
+      return movies.filter((movie) => movie.id !== action.payload.id);
     default:
-      return movies
+      return movies;
   }
 }
 
@@ -61,20 +55,24 @@ export default function RedList() {
     <main>
       <div>
         <h1 style={{ color: "red" }}>Red List</h1>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="Enter your movies..."
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <button type="submit">Add Movie</button>
-          </form>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Enter your movies..."
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <button type="submit">Add Movie</button>
+        </form>
 
-            {movies.slice().reverse().map((movie) => {
-              return <RedActions key={movie.id} movie={movie} dispatch={dispatch} />;
-            })}
-            
+        {movies
+          .slice()
+          .reverse()
+          .map((movie) => {
+            return (
+              <RedActions key={movie.id} movie={movie} dispatch={dispatch} />
+            );
+          })}
       </div>
     </main>
   );

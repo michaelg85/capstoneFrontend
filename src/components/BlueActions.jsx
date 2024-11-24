@@ -15,7 +15,12 @@ export default function BlueActions({ movie, dispatch }) {
         }
       />
 
-      <span style={{ fontSize: '24px', color: movie.complete ? "gray" : "lightblue" }}>
+      <span
+        style={{
+          fontSize: "24px",
+          color: movie.complete ? "silver" : "lightblue",
+        }}
+      >
         {movie.name}
       </span>
 
@@ -28,7 +33,6 @@ export default function BlueActions({ movie, dispatch }) {
         }
       ></input> */}
 
-
       {/* <button
         onClick={() =>
           dispatch({
@@ -40,8 +44,6 @@ export default function BlueActions({ movie, dispatch }) {
         Completed
       </button> */}
 
-
-
       {/* <button
         onChange={() =>
           dispatch({ type: ACTIONS.EDIT_MOVIE, payload: { id: movie.id } })
@@ -50,12 +52,12 @@ export default function BlueActions({ movie, dispatch }) {
         Edit
       </button> */}
 
-
-
-      <button style={{ fontSize: '14px', padding: '5px 10px' }}
+      <button
+        style={{ fontSize: "14px", padding: "5px 10px" }}
         onClick={() =>
           dispatch({ type: ACTIONS.DELETE_MOVIE, payload: { id: movie.id } })
-        }movie
+        }
+        movie
       >
         Delete
       </button>

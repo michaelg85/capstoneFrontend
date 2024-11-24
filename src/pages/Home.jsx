@@ -1,4 +1,4 @@
-import { useState, useEffect, useReducer } from 'react';
+import { useState, useEffect } from 'react';
 import Form from '../components/Form';
 import MovieDisplay from '../components/MovieDisplay';
 // import MovieChecklist from '../components/MovieChecklist';
@@ -43,9 +43,7 @@ export default function Home() {
     
    ];
 
-
-
-return (
+   return (
     <>
         <Form moviesearch={getMovie} />
         <div className="three-column-container">

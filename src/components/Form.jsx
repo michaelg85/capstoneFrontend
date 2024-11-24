@@ -24,7 +24,7 @@ export default function Form(props) {
       <div className="title" style={{ color: "yellow" }}>
         <h1>Settle it here!</h1>
         <h2>Each enter up to ten movies and let the game decide...</h2>
-        <h1 style={{ fontSize: '35px' }}>Movie Search</h1 >
+        <h1 style={{ fontSize: "35px" }}>Movie Search</h1>
         <form onSubmit={handleSubmit}>
           <input
             type="text"

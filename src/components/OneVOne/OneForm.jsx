@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function OneForm (props) {
+export default function OneForm(props) {
   // State to hold the data of our form
   const [formData, setFormData] = useState({
     searchterm: "",
@@ -34,4 +34,3 @@ export default function OneForm (props) {
     </div>
   );
 }
-

@@ -1,31 +1,28 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 function MovieChecklist({ movies }) {
-    //State to keep track of selected movies
-    const [checklist, setChecklist] = useState([]);
-    const [newMovie, setNewMovie] = useState('');
-    const [newMovieChecked, setNewMovieChecked] = useState(false);
-  
-    //Function to handle adding a movie to the checklist
-    const handleAddMovie = (movie) => {
-        if (checklist.length < 10 && !checklist.includes(movie)) {
-            setChecklist([...checklist, movie]);
-            setNewMovie('');
-        }
-    };
+  //State to keep track of selected movies
+  const [checklist, setChecklist] = useState([]);
+  const [newMovie, setNewMovie] = useState("");
 
+  //Function to handle adding a movie to the checklist
+  const handleAddMovie = (movie) => {
+    if (checklist.length < 10 && !checklist.includes(movie)) {
+      setChecklist([...checklist, movie]);
+      setNewMovie("");
+    }
+  };
 
+  //Handle the form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleAddMovie(newMovie);
+  };
 
-    //Handle the form submission
-    const handleSubmit = (e) => {
-     e.preventDefault();
-        handleAddMovie(newMovie);
-    };
-  
-        //Function to handle removing a movie from the checklist
-    const handleRemoveMovie = (movie) => {
-        setChecklist(checklist.filter((m) => m !== movie));
-    };
+  //Function to handle removing a movie from the checklist
+  const handleRemoveMovie = (movie) => {
+    setChecklist(checklist.filter((m) => m !== movie));
+  };
 
   return (
     <div>
@@ -35,15 +32,11 @@ function MovieChecklist({ movies }) {
       <ul>
         {checklist.map((movie, index) => (
           <li key={index}>
-            {movie} 
+            {movie}
             <button onClick={() => handleRemoveMovie(movie)}>Remove</button>
           </li>
         ))}
       </ul>
-
-      
-      
-
 
       <form onSubmit={handleSubmit}>
         <input
@@ -74,7 +67,7 @@ function MovieChecklist({ movies }) {
       <ul>
         {movies.map((movie, index) => (
           <li key={index}>
-            {movie} 
+            {movie}
             <button onClick={() => handleAddMovie(movie)}>
               {checklist.includes(movie) ? "Added" : "Add"}
             </button>

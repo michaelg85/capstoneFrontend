@@ -18,8 +18,8 @@ export default function AboutUs() {
         <br />
       </div>
       <h3 style={{ color: "gray" }}>
-        Try searching for movies in our comprehensive <Link to="/search">search</Link> tab,
-        before adding them to your list!
+        Try searching for movies in our comprehensive{" "}
+        <Link to="/search">search</Link> tab, before adding them to your list!
       </h3>
     </div>
   );
