@@ -1,5 +1,5 @@
 import { useState, useReducer } from "react";
-import BlueActions from "./BlueActions";
+import RedActions from "./RedActions";
 
 export const ACTIONS = {
   ADD_MOVIE: "add-movie",
@@ -47,7 +47,7 @@ function newMovie(name) {
   return { id: Date.now(), name: name, complete: false };
 }
 
-export default function BlueList() {
+export default function RedList() {
   const [movies, dispatch] = useReducer(reducer, []);
   const [name, setName] = useState("");
 
@@ -60,7 +60,7 @@ export default function BlueList() {
   return (
     <main>
       <div>
-        <h1 style={{ color: "lightblue" }}>Blue List</h1>
+        <h1 style={{ color: "red" }}>Red List</h1>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
@@ -72,7 +72,7 @@ export default function BlueList() {
           </form>
 
             {movies.slice().reverse().map((movie) => {
-              return <BlueActions key={movie.id} movie={movie} dispatch={dispatch} />;
+              return <RedActions key={movie.id} movie={movie} dispatch={dispatch} />;
             })}
             
       </div>

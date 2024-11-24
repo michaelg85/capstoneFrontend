@@ -1,7 +1,7 @@
 import React from "react";
-import { ACTIONS } from "../components/BlueList";
+import { ACTIONS } from "../components/RedList";
 
-export default function BlueActions({ movie, dispatch }) {
+export default function RedActions({ movie, dispatch }) {
   return (
     <div>
       <input
@@ -15,7 +15,7 @@ export default function BlueActions({ movie, dispatch }) {
         }
       />
 
-      <span style={{ fontSize: '24px', color: movie.complete ? "gray" : "lightblue" }}>
+      <span style={{ fontSize: '24px', color: movie.complete ? "pink" : "red" }}>
         {movie.name}
       </span>
 

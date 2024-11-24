@@ -1,19 +1,19 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Nav() {
   return (
     <nav>
-      <Link to={'/'}>Home</Link>
+      <NavLink to={'/'}>Home</NavLink>
       {' | '}
-      <Link to={'/oneVOne'}>1 v 1</Link>
+      <NavLink to={'/oneVOne'}>1 v 1</NavLink>
       {' | '}
-      <Link to={'/search'}>Search</Link>
+      <NavLink to={'/search'}>Search</NavLink>
       {' | '}
-      <Link to={'/help'}>Help</Link>
+      <NavLink to={'/help'}>Help</NavLink>
       {' | '}
-      <Link to={'/aboutUs'}>About Us</Link>
+      <NavLink to={'/aboutUs'}>About Us</NavLink>
       {' | '}
-      <Link to={'/contact'}>Contact</Link>
+      <NavLink to={'/contact'}>Contact</NavLink>
       <h1 style={{ fontSize: "60px", color: "yellow" }}>Whose Movie?!</h1>
     </nav>
   );

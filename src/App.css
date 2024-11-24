@@ -1,3 +1,15 @@
+.nav {
+  color: #ffffff; /* Default color */
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.nav .active-link {
+  color: #ff6347; /* Color for the active page link */
+  font-weight: bold;
+  border-bottom: 2px solid #ff6347; /* Optional underline */
+}
+
 body {
   background-color: #121212;
   color: #ffffff;
@@ -11,9 +23,9 @@ button {
   padding: 10px;
   border-radius: 5px;
   margin-top: 10px;
-  /* /* margin-right: 20px; */
-  margin-bottom: 20px;
-  margin-left: 20px; */
+  margin-right: 20px;
+  margin-bottom: 10px;
+  margin-left: 20px;
 }
 
 input {
@@ -23,7 +35,7 @@ input {
   padding: 8px;
   border-radius: 5px;
   margin-top: 0px;
-  /* margin-right: 20px; */
+  margin-right: 10px;
   margin-bottom: 10px;
   margin-left: 20px;
 }
@@ -54,17 +66,9 @@ input {
 }
 
 
-.nav {
-  position: fixed;       /* Fixes the navbar to the screen */
-  top: 0;                /* Positions it at the very top */
-  left: 0;               /* Aligns it with the left side of the screen */
-  width: 100%;           /* Makes it span the full width of the screen */
-  background-color: #333; /* Example background color */
-  color: white;
-  padding: 10px 20px;
-  z-index: 1000;         /* Keeps the navbar on top of other content */
-}
+.heading 
+  {
+    line-height: 1.2; /* Adjust this value for desired spacing */
+  }
 
-.main-content {
-  margin-top: 60px; /* Adjust to match the height of your navbar */
-}
+

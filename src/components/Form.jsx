@@ -20,12 +20,11 @@ export default function Form(props) {
   };
 
   return (
-    <div>
+    <div className="heading">
       <div className="title" style={{ color: "yellow" }}>
         <h1>Settle it here!</h1>
-        <h2>Each enter a movie and let the game decide...</h2>
-
-        <h1>Movie Search</h1>
+        <h2>Each enter up to ten movies and let the game decide...</h2>
+        <h1 style={{ fontSize: '35px' }}>Movie Search</h1 >
         <form onSubmit={handleSubmit}>
           <input
             type="text"
