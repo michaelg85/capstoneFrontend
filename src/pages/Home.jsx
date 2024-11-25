@@ -8,7 +8,12 @@ import { Link } from "react-router-dom";
 
 //Form
 export default function Home() {
-  const [movie, setMovie] = useState(null); //or [] ?
+  const [movie, setMovie] = useState(null);
+  // const [formData, setFormData] = useState({
+  //   searchParams: '',
+  //   movies: false,
+  // });
+  
     //Calls api key from .env
     let key = import.meta.env.VITE_apiKey
   // Function to get movies
@@ -42,6 +47,7 @@ export default function Home() {
    const blueList = [
     
    ];
+
 
    return (
     <>

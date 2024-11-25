@@ -1,4 +1,4 @@
-import { useState, useReducer } from "react";
+import { useState, useReducer, useEffect } from "react";
 import RedActions from "./RedActions";
 
 export const ACTIONS = {
@@ -10,6 +10,7 @@ export const ACTIONS = {
 };
 
 function reducer(movies, action) {
+  
   switch (action.type) {
     case ACTIONS.ADD_MOVIE:
       return [...movies, newMovie(action.payload.name)];

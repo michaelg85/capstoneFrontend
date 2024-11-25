@@ -25,17 +25,35 @@ export default function Form(props) {
         <h1>Settle it here!</h1>
         <h2>Each enter up to ten movies and let the game decide...</h2>
         <h1 style={{ fontSize: "35px" }}>Movie Search</h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="searchterm"
-            onChange={handleChange}
-            value={formData.searchterm}
-          />
-          <br />
-          <input type="submit" value="Search" />
-        </form>
-      </div>
+      </div>    
+        <div className="form-three-column-container">
+          <div className="column">
+              <button style={{ color: "red" }}
+                type="submit"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                >Add Red Movie</button>
+          </div>
+          <div className="column">
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="searchterm"
+                onChange={handleChange}
+                value={formData.searchterm}
+              />
+              <br />
+              <input type="submit" value="Search" />
+            </form>
+            </div>
+          <div className="column">
+              <button style={{ color: "lightblue" }}
+                type="submit"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                >Add Blue Movie</button>
+          </div>
+        </div>
     </div>
   );
 }

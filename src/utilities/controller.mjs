@@ -16,7 +16,7 @@ async function createMovie(formData) {
   try {
     let url = "http://localhost:3000/api/movie";
 
-    // formData.price = '$' + formData.price;
+    formData.movie = '$' + formData.movie;
 
     let res = await axios.post(url, formData);
 
@@ -64,4 +64,10 @@ async function deleteMovie(id) {
   }
 }
 
-export { getAllMovies, createMovie, getOneMovie, updateOneMovie, deleteMovie };
+export { 
+  getAllMovies,
+  createMovie,
+  getOneMovie,
+  updateOneMovie,
+  deleteMovie
+};

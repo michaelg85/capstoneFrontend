@@ -61,6 +61,11 @@ input {
   justify-content: space-between; /* Add space between columns */
 }
 
+.form-three-column-container {
+  display: flex;
+  justify-content: space-between; /* Add space between columns */
+}
+
 .column {
   flex: 1; /* Each column takes up equal width */
   padding: 10px;
