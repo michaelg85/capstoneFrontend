@@ -52,6 +52,8 @@ export default function RedList() {
     setName("");
   }
 
+
+
   return (
     <main>
       <div>
