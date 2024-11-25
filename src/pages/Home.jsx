@@ -9,10 +9,8 @@ import { Link } from "react-router-dom";
 //Form
 export default function Home() {
   const [movie, setMovie] = useState(null);
-  // const [formData, setFormData] = useState({
-  //   searchParams: '',
-  //   movies: false,
-  // });
+  const [redList, setRedList] = useState([]);
+  const [blueList, setBlueList] = useState([]);
   
     //Calls api key from .env
     let key = import.meta.env.VITE_apiKey
@@ -32,30 +30,15 @@ export default function Home() {
     useEffect(() => {
       getMovie("Superman");
     }, []);
-  
-  // //Movie checklist
-  //  const movies = [
- 
-  //     ];
-
-  //Red List
-   const redList = [
     
-   ];
-
-  //Blue List
-   const blueList = [
-    
-   ];
-
 
    return (
     <>
-        <Form moviesearch={getMovie} />
+        <Form moviesearch={getMovie} movie={movie} redList={redList} setRedList={setRedList} blueList={blueList} setBlueList={setBlueList} />
         <div className="three-column-container">
-          <div className="column"><RedList redList={redList} /></div>
+          <div className="column"><RedList redList={redList} setRedList={setRedList} /></div>
           <div className="column"><MovieDisplay movie={movie} /></div>
-          <div className="column"><BlueList blueList={blueList} /></div>
+          <div className="column"><BlueList blueList={blueList} setBlueList={setBlueList} /></div>
         </div>
         <br />
         <br />

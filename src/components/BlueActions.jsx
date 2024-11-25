@@ -1,7 +1,18 @@
 import React from "react";
 import { ACTIONS } from "../components/BlueList";
+import axios from "axios";
 
-export default function BlueActions({ movie, dispatch }) {
+export default function BlueActions({ movie, dispatch, blueList, setBlueList, }) {
+  async function handleDelete() {
+    try {
+      await axios.delete(`http://localhost:3000/api/movies/${movie._id}`);
+      let newList = blueList.filter((el) => el._id !== movie._id);
+      setBlueList(newList);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <div>
       <input
@@ -16,12 +27,9 @@ export default function BlueActions({ movie, dispatch }) {
       />
 
       <span
-        style={{
-          fontSize: "24px",
-          color: movie.complete ? "silver" : "lightblue",
-        }}
+        style={{ fontSize: "24px", color: movie.complete ? "silver" : "lightblue" }}
       >
-        {movie.name}
+        {movie.title}
       </span>
 
       {/* <input
@@ -54,9 +62,7 @@ export default function BlueActions({ movie, dispatch }) {
 
       <button
         style={{ fontSize: "14px", padding: "5px 10px" }}
-        onClick={() =>
-          dispatch({ type: ACTIONS.DELETE_MOVIE, payload: { id: movie.id } })
-        }
+        onClick={() => handleDelete()}
         movie
       >
         Delete

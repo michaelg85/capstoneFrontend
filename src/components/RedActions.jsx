@@ -1,7 +1,18 @@
 import React from "react";
 import { ACTIONS } from "../components/RedList";
+import axios from "axios";
 
-export default function RedActions({ movie, dispatch }) {
+export default function RedActions({ movie, dispatch, redList, setRedList }) {
+  async function handleDelete() {
+    try {
+      await axios.delete(`http://localhost:3000/api/movies/${movie._id}`);
+      let newList = redList.filter((el) => el._id !== movie._id);
+      setRedList(newList);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <div>
       <input
@@ -18,7 +29,7 @@ export default function RedActions({ movie, dispatch }) {
       <span
         style={{ fontSize: "24px", color: movie.complete ? "pink" : "red" }}
       >
-        {movie.name}
+        {movie.title}
       </span>
 
       {/* <input
@@ -51,9 +62,7 @@ export default function RedActions({ movie, dispatch }) {
 
       <button
         style={{ fontSize: "14px", padding: "5px 10px" }}
-        onClick={() =>
-          dispatch({ type: ACTIONS.DELETE_MOVIE, payload: { id: movie.id } })
-        }
+        onClick={() => handleDelete()}
         movie
       >
         Delete

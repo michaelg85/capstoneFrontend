@@ -1,5 +1,6 @@
 import { useState, useReducer, useEffect } from "react";
 import RedActions from "./RedActions";
+import axios from "axios";
 
 export const ACTIONS = {
   ADD_MOVIE: "add-movie",
@@ -20,7 +21,7 @@ function reducer(movies, action) {
         if (movie.id === action.payload.id) {
           // return { ...movie, '': action.payload.text };
         }
-        return add - movie;
+        return add-movie;
       });
 
     case ACTIONS.TOGGLE_MOVIE:
@@ -42,23 +43,40 @@ function newMovie(name) {
   return { id: Date.now(), name: name, complete: false };
 }
 
-export default function RedList() {
+export default function RedList(props) {
   const [movies, dispatch] = useReducer(reducer, []);
   const [name, setName] = useState("");
+  const [redList, setRedList] = useState([]);
 
   function handleSubmit(e) {
     e.preventDefault();
     dispatch({ type: ACTIONS.ADD_MOVIE, payload: { name: name } });
     setName("");
+  };
+
+  async function getRedList() {
+    try {
+      let getAllMovies = {
+        userId: 1,
+      };
+
+      let res = await axios.get("http://localhost:3000/api/movies", getAllMovies);
+      props.setRedList(res.data);
+    } catch (error) {
+      console.error(error)
+    }
   }
 
+  useEffect(() => {
+    getRedList();
+  }, []);
 
 
   return (
     <main>
       <div>
         <h1 style={{ color: "red" }}>Red List</h1>
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Enter your movies..."
@@ -66,14 +84,14 @@ export default function RedList() {
             onChange={(e) => setName(e.target.value)}
           />
           <button type="submit">Add Movie</button>
-        </form>
+        </form> */}
 
-        {movies
+        {props.redList
           .slice()
           .reverse()
           .map((movie) => {
             return (
-              <RedActions key={movie.id} movie={movie} dispatch={dispatch} />
+              <RedActions key={movie.id} movie={movie} dispatch={dispatch} redList={props.redList} setRedList={props.setRedList} />
             );
           })}
       </div>
