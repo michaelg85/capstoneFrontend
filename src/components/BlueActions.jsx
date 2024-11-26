@@ -2,7 +2,7 @@ import React from "react";
 import { ACTIONS } from "../components/BlueList";
 import axios from "axios";
 
-export default function BlueActions({ movie, dispatch, blueList, setBlueList, }) {
+export default function BlueActions({ movie, dispatch, blueList, setBlueList }) {
   async function handleDelete() {
     try {
       await axios.delete(`http://localhost:3000/api/movies/${movie._id}`);
@@ -21,7 +21,7 @@ export default function BlueActions({ movie, dispatch, blueList, setBlueList, })
         onChange={() =>
           dispatch({
             type: ACTIONS.TOGGLE_MOVIE, // Dispatch toggle action
-            payload: { id: movie.id },
+            payload: { id: movie._id },
           })
         }
       />

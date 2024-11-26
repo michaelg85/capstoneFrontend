@@ -21,7 +21,7 @@ export default function RedActions({ movie, dispatch, redList, setRedList }) {
         onChange={() =>
           dispatch({
             type: ACTIONS.TOGGLE_MOVIE, // Dispatch toggle action
-            payload: { id: movie.id },
+            payload: { id: movie._id },
           })
         }
       />

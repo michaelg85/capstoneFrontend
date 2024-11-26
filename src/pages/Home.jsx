@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import Form from '../components/Form';
 import MovieDisplay from '../components/MovieDisplay';
-// import MovieChecklist from '../components/MovieChecklist';
 import RedList from '../components/RedList';
 import BlueList from '../components/BlueList';
 import { Link } from "react-router-dom";
@@ -30,7 +29,7 @@ export default function Home() {
     useEffect(() => {
       getMovie("Superman");
     }, []);
-    
+
 
    return (
     <>

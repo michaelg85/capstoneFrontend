@@ -11,7 +11,6 @@ export const ACTIONS = {
 };
 
 function reducer(movies, action) {
-
   switch (action.type) {
     case ACTIONS.ADD_MOVIE:
       return [...movies, newMovie(action.payload.name)];
@@ -21,7 +20,7 @@ function reducer(movies, action) {
         if (movie.id === action.payload.id) {
           // return { ...movie, '': action.payload.text };
         }
-        return add-movie;
+        return add - movie;
       });
 
     case ACTIONS.TOGGLE_MOVIE:
@@ -50,7 +49,7 @@ export default function BlueList(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch({ type: ACTIONS.ADD_MOVIE, payload: { name: name } });
+    dispatch({ type: ACTIONS.ADD_MOVIE, payload: { id: user2, name: name } });
     setName("");
   }
 
@@ -60,10 +59,13 @@ export default function BlueList(props) {
         userId: 2,
       };
 
-      let res = await axios.get("http://localhost:3000/api/movies", getAllMovies);
+      let res = await axios.get(
+        "http://localhost:3000/api/movies",
+        getAllMovies
+      );
       props.setBlueList(res.data);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   }
 
@@ -86,11 +88,17 @@ export default function BlueList(props) {
         </form> */}
 
         {props.blueList
-          .slice()
+          .slice([])
           .reverse()
           .map((movie) => {
             return (
-              <BlueActions key={movie.id} movie={movie} dispatch={dispatch} blueList={props.blueList} setBlueList={props.setBlueList} />
+              <BlueActions
+                key={movie._id}
+                movie={movie}
+                dispatch={dispatch}
+                blueList={props.blueList}
+                setBlueList={props.setBlueList}
+              />
             );
           })}
       </div>

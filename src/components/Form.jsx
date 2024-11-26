@@ -29,9 +29,10 @@ export default function Form(props) {
         poster: props.movie.Poster,
         year: props.movie.Year,
         plot: props.movie.Plot,
+        listType: "red",
       };
       if (props.redList.length >= 10){
-        alert('You can only have up to 10 movies')
+        alert('You can only have up to 10 movies!')
       }
       else{
         let res = await axios.post("http://localhost:3000/api/movies", newMovie);
@@ -52,9 +53,10 @@ export default function Form(props) {
         poster: props.movie.Poster,
         year: props.movie.Year,
         plot: props.movie.Plot,
+        listType: "blue",
       };
       if (props.blueList.length >= 10){
-        alert('You can only have up to 10 movies')
+        alert('You can only have up to 10 movies!')
       }
       else{
         let res = await axios.post("http://localhost:3000/api/movies", newMovie);
@@ -78,7 +80,7 @@ export default function Form(props) {
           <button
             style={{ color: "red" }}
             type="submit"
-            // value={name}
+            value={name}
             onClick={(e) => handleRedClick(e)}
           >
             Add Red Movie
@@ -100,7 +102,7 @@ export default function Form(props) {
           <button
             style={{ color: "lightblue" }}
             type="submit"
-            // value={name}
+            value={name}
             onClick={(e) => handleBlueClick(e)}
           >
             Add Blue Movie

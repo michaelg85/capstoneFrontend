@@ -31,8 +31,6 @@ const RandomChoice = ({ redMovie, blueMovie }) => {
         </>
       )}
     </div>
-    // <h2>Selected</h2>
-    // {selectedChoice}
   );
 };
 

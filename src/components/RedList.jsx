@@ -50,14 +50,14 @@ export default function RedList(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch({ type: ACTIONS.ADD_MOVIE, payload: { name: name } });
+    dispatch({ type: ACTIONS.ADD_MOVIE, payload: { id: user1, name: name } });
     setName("");
   };
 
   async function getRedList() {
     try {
       let getAllMovies = {
-        userId: 1,
+        userId: 1
       };
 
       let res = await axios.get("http://localhost:3000/api/movies", getAllMovies);
@@ -70,7 +70,6 @@ export default function RedList(props) {
   useEffect(() => {
     getRedList();
   }, []);
-
 
   return (
     <main>
@@ -91,7 +90,7 @@ export default function RedList(props) {
           .reverse()
           .map((movie) => {
             return (
-              <RedActions key={movie.id} movie={movie} dispatch={dispatch} redList={props.redList} setRedList={props.setRedList} />
+              <RedActions key={movie._id} movie={movie} dispatch={dispatch} redList={props.redList} setRedList={props.setRedList} />
             );
           })}
       </div>
