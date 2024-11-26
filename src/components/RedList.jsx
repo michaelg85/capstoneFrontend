@@ -11,29 +11,28 @@ export const ACTIONS = {
 };
 
 function reducer(movies, action) {
-  
   switch (action.type) {
     case ACTIONS.ADD_MOVIE:
       return [...movies, newMovie(action.payload.name)];
 
     case ACTIONS.EDIT_MOVIE:
       return movies.map((movie) => {
-        if (movie.id === action.payload.id) {
+        if (movie._id === action.payload.id) {
           // return { ...movie, '': action.payload.text };
         }
-        return add-movie;
+        return add - movie;
       });
 
     case ACTIONS.TOGGLE_MOVIE:
       return movies.map((movie) => {
-        if (movie.id === action.payload.id) {
+        if (movie._id === action.payload.id) {
           return { ...movie, complete: !movie.complete };
         }
         return movie;
       });
 
     case ACTIONS.DELETE_MOVIE:
-      return movies.filter((movie) => movie.id !== action.payload.id);
+      return movies.filter((movie) => movie._id !== action.payload._id);
     default:
       return movies;
   }
@@ -52,18 +51,21 @@ export default function RedList(props) {
     e.preventDefault();
     dispatch({ type: ACTIONS.ADD_MOVIE, payload: { id: user1, name: name } });
     setName("");
-  };
+  }
 
   async function getRedList() {
     try {
       let getAllMovies = {
-        userId: 1
+        userId: 1,
       };
 
-      let res = await axios.get("http://localhost:3000/api/movies", getAllMovies);
+      let res = await axios.get(
+        "http://localhost:3000/api/movies",
+        getAllMovies
+      );
       props.setRedList(res.data);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   }
 
@@ -90,7 +92,13 @@ export default function RedList(props) {
           .reverse()
           .map((movie) => {
             return (
-              <RedActions key={movie._id} movie={movie} dispatch={dispatch} redList={props.redList} setRedList={props.setRedList} />
+              <RedActions
+                key={movie._id || movie.title + movie.year}
+                movie={movie}
+                dispatch={dispatch}
+                redList={props.redList}
+                setRedList={props.setRedList}
+              />
             );
           })}
       </div>

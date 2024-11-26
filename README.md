@@ -4,7 +4,7 @@
 
 ## **DESCRIPTION**
 
-I decided to create this app to help my wife and I, along with countless couples, pick whose movie will be watched!
+I decided to create this app to help my wife and I, along with countless couples, pick whose movie will be watched! Too much time is spent trying to decide. That ends here.
 
 There is also the ability to keep a list of movies you would like to watch, up to ten each.
 

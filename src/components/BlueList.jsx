@@ -17,7 +17,7 @@ function reducer(movies, action) {
 
     case ACTIONS.EDIT_MOVIE:
       return movies.map((movie) => {
-        if (movie.id === action.payload.id) {
+        if (movie._id === action.payload.id) {
           // return { ...movie, '': action.payload.text };
         }
         return add - movie;
@@ -25,14 +25,14 @@ function reducer(movies, action) {
 
     case ACTIONS.TOGGLE_MOVIE:
       return movies.map((movie) => {
-        if (movie.id === action.payload.id) {
+        if (movie._id === action.payload.id) {
           return { ...movie, complete: !movie.complete };
         }
         return movie;
       });
 
     case ACTIONS.DELETE_MOVIE:
-      return movies.filter((movie) => movie.id !== action.payload.id);
+      return movies.filter((movie) => movie._id !== action.payload._id);
     default:
       return movies;
   }
@@ -93,7 +93,7 @@ export default function BlueList(props) {
           .map((movie) => {
             return (
               <BlueActions
-                key={movie._id}
+                key={movie._id || movie.title + movie.year}
                 movie={movie}
                 dispatch={dispatch}
                 blueList={props.blueList}

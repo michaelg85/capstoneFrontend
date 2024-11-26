@@ -21,6 +21,11 @@ export default function Form(props) {
   };
 
   async function handleRedClick() {
+    if (!props.movie || !props.movie.Title) {
+      alert("No movie selected to add!");
+      return;
+    }
+    console.log("adding to Red List:", props.movie);
     try {
       let newMovie = {
         userId: 1,
@@ -35,7 +40,7 @@ export default function Form(props) {
         alert('You can only have up to 10 movies!')
       }
       else{
-        let res = await axios.post("http://localhost:3000/api/movies", newMovie);
+        await axios.post("http://localhost:3000/api/movies", newMovie);
         props.setRedList([...props.redList, newMovie]);
       }
       
@@ -45,6 +50,11 @@ export default function Form(props) {
   }
 
   async function handleBlueClick() {
+    if (!props.movie || !props.movie.Title) {
+      alert("No movie selected to add!");
+      return;
+    }
+    console.log("adding to Blue List:", props.movie);
     try {
       let newMovie = {
         userId: 2,
@@ -59,7 +69,7 @@ export default function Form(props) {
         alert('You can only have up to 10 movies!')
       }
       else{
-        let res = await axios.post("http://localhost:3000/api/movies", newMovie);
+       await axios.post("http://localhost:3000/api/movies", newMovie);
         props.setBlueList([...props.blueList, newMovie]);
       }
 
@@ -79,9 +89,8 @@ export default function Form(props) {
         <div className="column">
           <button
             style={{ color: "red" }}
-            type="submit"
-            value={name}
-            onClick={(e) => handleRedClick(e)}
+            type="button"
+            onClick={handleRedClick}
           >
             Add Red Movie
           </button>
@@ -101,9 +110,8 @@ export default function Form(props) {
         <div className="column">
           <button
             style={{ color: "lightblue" }}
-            type="submit"
-            value={name}
-            onClick={(e) => handleBlueClick(e)}
+            type="button"
+            onClick={handleBlueClick}
           >
             Add Blue Movie
           </button>

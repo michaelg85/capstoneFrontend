@@ -6,14 +6,19 @@ export default function AboutUs() {
     <div>
       <div className="title" style={{ color: "yellow" }}>
         <h1>About Us!</h1>
-        <h2>
-          My wife and I love each other very much but when it comes to choosing
-          whose movie to watch it can become quite contentious! input you list
-          of up to ten movies and select which movies you'd like to enter into
-          the ring, then let the app decide! if you let the app choose, you must
-          watch it all the way through so "enter" with caution! another option
-          is to let each other choose a predetermined ammount of movies from
-          your partners list and then let the app decide!
+        <h2 style={{ textAlign: 'justify' }}>
+          I decided to create this app to help my wife and I (along with
+          countless couples) pick whose movie will be watched! Too much time is spent trying to decide. That ends here, with the Whose Movie?! app.
+          <br />
+          <br />
+          Create a list of up to ten movies you'd like to watch, come back any time and then take your movie to the 1v1 page and face off! "Enter" with caution! If you let the app decide you must stick to the desicion that's been made. (Well, no one's holding you to it, but then what's the point of all this!?)
+          <br />
+          <br />
+          My wife and I love to watch movies together... we also love each other very much. When it
+          comes to choosing whose movie to watch, we all know, it can become quite the debate! Not to mention the ammount of time spent deciding.
+          <br />
+          <br />
+          Need some <Link to="/help">help </Link> deciding how to use the app? 
         </h2>
         <br />
       </div>

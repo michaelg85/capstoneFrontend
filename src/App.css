@@ -1,15 +1,3 @@
-.nav {
-  color: #ffffff; /* Default color */
-  padding: 10px 20px;
-  text-decoration: none;
-}
-
-.nav .active-link {
-  color: #ff6347; /* Color for the active page link */
-  font-weight: bold;
-  border-bottom: 2px solid #ff6347; /* Optional underline */
-}
-
 body {
   background-color: #121212;
   color: #ffffff;
@@ -47,7 +35,9 @@ input {
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  /* padding: 6rem; */
+  padding-top: 1rem;
+  padding-right: 6rem;
+  padding-left: 6rem;
   text-align: center;
 }
 
@@ -72,4 +62,16 @@ input {
   /* background-color: #f0f0f0; */
   margin: 5px;
   text-align: center;
+}
+
+.nav {
+  color: #ffffff; /* Default color */
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.nav .active-link {
+  color: #ff6347; /* Color for the active page link */
+  font-weight: bold;
+  border-bottom: 2px solid #ff6347; /* Optional underline */
 }
