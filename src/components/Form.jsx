@@ -40,7 +40,7 @@ export default function Form(props) {
         alert('You can only have up to 10 movies!')
       }
       else{
-        await axios.post("http://localhost:3000/api/movies", newMovie);
+        await axios.post("https://whosemoviebackend.onrender.com/api/movies", newMovie);
         // props.setRedList([...props.redList, newMovie]);
         props.setRedList((prev) => [...prev, newMovie]);
       }
@@ -70,7 +70,7 @@ export default function Form(props) {
         alert('You can only have up to 10 movies!')
       }
       else{
-       await axios.post("http://localhost:3000/api/movies", newMovie);
+       await axios.post("https://whosemoviebackend.onrender.com/api/movies", newMovie);
         // props.setBlueList([...props.blueList, newMovie]);
         props.setBlueList((prev) => [...prev, newMovie]);
       }

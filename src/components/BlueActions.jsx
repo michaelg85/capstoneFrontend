@@ -5,7 +5,7 @@ import axios from "axios";
 export default function BlueActions({ movie, dispatch, blueList, setBlueList }) {
   async function handleDelete() {
     try {
-      await axios.delete(`http://localhost:3000/api/movies/${movie._id}`);
+      await axios.delete(`https://whosemoviebackend.onrender.com/api/movies/${movie._id}`);
       let newList = blueList.filter((el) => el._id !== movie._id);
       setBlueList(newList);
     } catch (error) {

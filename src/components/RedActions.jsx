@@ -5,7 +5,7 @@ import axios from "axios";
 export default function RedActions({ movie, dispatch, redList, setRedList }) {
   async function handleDelete() {
     try {
-      await axios.delete(`http://localhost:3000/api/movies/${movie._id}`);
+      await axios.delete(`https://whosemoviebackend.onrender.com/api/movies/${movie._id}`);
       let newList = redList.filter((el) => el._id !== movie._id);
       setRedList(newList);
     } catch (error) {

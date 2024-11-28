@@ -60,7 +60,7 @@ export default function RedList(props) {
       };
 
       let res = await axios.get(
-        "http://localhost:3000/api/movies",
+        "https://whosemoviebackend.onrender.com/api/movies",
         getAllMovies
       );
       props.setRedList(res.data);
@@ -76,7 +76,7 @@ export default function RedList(props) {
   // useEffect(() => {
   //   async function getRedList() {
   //     try {
-  //       const res = await axios.get("http://localhost:3000/api/movies?userId=1");
+  //       const res = await axios.get("https://whosemoviebackend.onrender.com/movies?userId=1");
   //       props.setRedList(res.data); // No need for local redList management
   //     } catch (error) {
   //       console.error(error);
@@ -88,7 +88,7 @@ export default function RedList(props) {
   useEffect(() => {
     async function fetchRedMovies() {
       try {
-        const response = await axios.get("http://localhost:3000/api/movies", {
+        const response = await axios.get("https://whosemoviebackend.onrender.com/api/movies", {
           params: { userId: 1 },
         });
         props.setRedList(response.data); // No local state, update parent state
@@ -109,7 +109,7 @@ export default function RedList(props) {
       if (props.redList.length >= 10) {
         alert("You can only have up to 10 movies!");
       } else {
-        await axios.post("http://localhost:3000/api/movies", newMovie);
+        await axios.post("https://whosemoviebackend.onrender.com/api/movies", newMovie);
         props.setRedList((prev) => [...prev, newMovie]);
       }
     } catch (error) {

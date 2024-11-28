@@ -60,7 +60,7 @@ export default function BlueList(props) {
       };
 
       let res = await axios.get(
-        "http://localhost:3000/api/movies",
+        "https://whosemoviebackend.onrender.com/api/movies",
         getAllMovies
       );
       props.setBlueList(res.data);
@@ -76,7 +76,7 @@ export default function BlueList(props) {
   // useEffect(() => {
   //   async function getBlueList() {
   //     try {
-  //       const res = await axios.get("http://localhost:3000/api/movies?userId=2");
+  //       const res = await axios.get("https://whosemoviebackend.onrender.com/api/movies?userId=2");
   //       props.setBlueList(res.data); // No need for local blueList management
   //     } catch (error) {
   //       console.error(error);
@@ -88,7 +88,7 @@ export default function BlueList(props) {
   useEffect(() => {
     async function fetchBlueMovies() {
       try {
-        const response = await axios.get("http://localhost:3000/api/movies", {
+        const response = await axios.get("https://whosemoviebackend.onrender.com/api/movies", {
           params: { userId: 2 },
         });
         props.setBlueList(response.data);
