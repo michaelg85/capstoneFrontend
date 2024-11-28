@@ -13,12 +13,14 @@ function App() {
     <main>
       <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
+        
         <Route path="/oneVOne" element={<OneVOne />} />
+        {/* <Route path="/oneVOne" element={<OneVOne />} />  */}
         <Route path="/search" element={<Search />} />
         <Route path="/help" element={<Help />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/list" element={<Home />} />
       </Routes>
     </main>
   );

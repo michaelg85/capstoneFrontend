@@ -20,7 +20,7 @@ const RandomChoice = ({ redMovie, blueMovie }) => {
       <h1>Decision Time</h1>
       <button
         onClick={selectRandomChoice}
-        style={{ color: "yellow", fontStyle: "italic", backgroundColor: 'purple' }}
+        style={{ color: "yellow", fontStyle: "italic", backgroundColor: 'indigo' }}
       >
         Click to reveal your destiny!
       </button>

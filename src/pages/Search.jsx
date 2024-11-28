@@ -21,7 +21,7 @@ export default function Search() {
 
   // This will run on the first render but not on subsquent renders
   useEffect(() => {
-    getMovie("The Land Before Time");
+    getMovie("A Charlie Brown Thanksgiving");
   }, []);
 
   return (
