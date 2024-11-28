@@ -69,26 +69,42 @@ export default function BlueList(props) {
     }
   }
 
+  // useEffect(() => {
+  //   getBlueList();
+  // }, []);
+
+  // useEffect(() => {
+  //   async function getBlueList() {
+  //     try {
+  //       const res = await axios.get("http://localhost:3000/api/movies?userId=2");
+  //       props.setBlueList(res.data); // No need for local blueList management
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   }
+  //   getBlueList();
+  // }, [props.setBlueList]);
+
   useEffect(() => {
-    getBlueList();
-  }, []);
+    async function fetchBlueMovies() {
+      try {
+        const response = await axios.get("http://localhost:3000/api/movies", {
+          params: { userId: 2 },
+        });
+        props.setBlueList(response.data);
+      } catch (error) {
+        console.error("Error fetching blue list:", error);
+      }
+    }
+    fetchBlueMovies();
+  }, [props.setBlueList]);
 
   return (
     <main>
       <div>
         <h1 style={{ color: "lightblue" }}>Blue List</h1>
-        {/* <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Enter your movies..."
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <button type="submit">Add Movie</button>
-        </form> */}
-
         {props.blueList
-          .slice([])
+          .slice()
           .reverse()
           .map((movie) => {
             return (

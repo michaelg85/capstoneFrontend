@@ -5,7 +5,7 @@ import RedList from "../components/RedList";
 import BlueList from "../components/BlueList";
 import { Link } from "react-router-dom";
 
-//Form
+
 export default function Home() {
   const [movie, setMovie] = useState(null);
   const [redList, setRedList] = useState([]);
@@ -27,7 +27,7 @@ export default function Home() {
 
   // This will run on the first render but not on subsquent renders
   useEffect(() => {
-    getMovie("Superman");
+    getMovie("planes, trains & automobiles");
   }, []);
 
   return (

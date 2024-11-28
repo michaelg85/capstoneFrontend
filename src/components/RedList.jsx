@@ -69,24 +69,58 @@ export default function RedList(props) {
     }
   }
 
+  // useEffect(() => {
+  //   getRedList();
+  // }, []);
+
+  // useEffect(() => {
+  //   async function getRedList() {
+  //     try {
+  //       const res = await axios.get("http://localhost:3000/api/movies?userId=1");
+  //       props.setRedList(res.data); // No need for local redList management
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   }
+  //   getRedList();
+  // }, [props.setRedList]);
+
   useEffect(() => {
-    getRedList();
-  }, []);
+    async function fetchRedMovies() {
+      try {
+        const response = await axios.get("http://localhost:3000/api/movies", {
+          params: { userId: 1 },
+        });
+        props.setRedList(response.data); // No local state, update parent state
+      } catch (error) {
+        console.error("Error fetching red list:", error);
+      }
+    }
+    fetchRedMovies();
+  }, [props.setRedList]);
+
+  async function handleRedClick() {
+    if (!props.movie?.Title) {
+      alert("No movie selected to add!");
+      return;
+    }
+    try {
+      let newMovie = { /* Same movie structure */ };
+      if (props.redList.length >= 10) {
+        alert("You can only have up to 10 movies!");
+      } else {
+        await axios.post("http://localhost:3000/api/movies", newMovie);
+        props.setRedList((prev) => [...prev, newMovie]);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <main>
       <div>
         <h1 style={{ color: "red" }}>Red List</h1>
-        {/* <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Enter your movies..."
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <button type="submit">Add Movie</button>
-        </form> */}
-
         {props.redList
           .slice()
           .reverse()

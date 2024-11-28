@@ -41,7 +41,8 @@ export default function Form(props) {
       }
       else{
         await axios.post("http://localhost:3000/api/movies", newMovie);
-        props.setRedList([...props.redList, newMovie]);
+        // props.setRedList([...props.redList, newMovie]);
+        props.setRedList((prev) => [...prev, newMovie]);
       }
       
     } catch (error) {
@@ -70,7 +71,8 @@ export default function Form(props) {
       }
       else{
        await axios.post("http://localhost:3000/api/movies", newMovie);
-        props.setBlueList([...props.blueList, newMovie]);
+        // props.setBlueList([...props.blueList, newMovie]);
+        props.setBlueList((prev) => [...prev, newMovie]);
       }
 
     } catch (error) {
