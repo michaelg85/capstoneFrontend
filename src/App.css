@@ -49,13 +49,11 @@ input {
 .three-column-container {
   display: flex;
   justify-content: space-between; /* Add space between columns */
-  gap: 75px; /* Adds space between columns */
 }
 
 .form-three-column-container {
   display: flex;
   justify-content: space-between; /* Add space between columns */
-  gap: 150px; /* Adds space between columns */
 }
 
 .column {
