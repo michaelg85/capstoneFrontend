@@ -14,7 +14,7 @@ function App() {
       <Nav />
       <Routes>
         
-        <Route path="/oneVOne" element={<OneVOne />} />
+        <Route path="/" element={<OneVOne />} />
         {/* <Route path="/oneVOne" element={<OneVOne />} />  */}
         <Route path="/search" element={<Search />} />
         <Route path="/help" element={<Help />} />

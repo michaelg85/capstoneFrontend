@@ -4,7 +4,7 @@ export default function Nav() {
   return (
     <nav>
       
-      <NavLink to={"/oneVOne"}>1 v 1</NavLink>
+      <NavLink to={"/"}>1 v 1</NavLink>
       {" • "}
       <NavLink to={"/search"}>Search</NavLink>
       {" • "}
