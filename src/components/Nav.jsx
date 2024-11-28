@@ -15,7 +15,6 @@ export default function Nav() {
       <NavLink to={"/contact"}>Contact</NavLink>
       {" • "}
       <NavLink to={"/list"}>List</NavLink>
-      {" • "}
       <h1 style={{ fontSize: "60px", color: "yellow" }}>Whose Movie?!</h1>
     </nav>
   );
