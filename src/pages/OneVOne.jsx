@@ -24,7 +24,7 @@ export default function OneVOne() {
   const getMovie = async (searchTerm) => {
     // Make fetch request and store the response
     const response = await fetch(
-      `http://www.omdbapi.com/?apikey=${key}&t=${searchTerm}`
+      `https://www.omdbapi.com/?apikey=${key}&t=${searchTerm}`
     );
     // Parse JSON response into a JavaScript object
     const data = await response.json();
@@ -41,7 +41,7 @@ export default function OneVOne() {
   const getRedMovie = async (searchTerm) => {
     // Make fetch request and store the response
     const response = await fetch(
-      `http://www.omdbapi.com/?apikey=${key}&t=${searchTerm}`
+      `https://www.omdbapi.com/?apikey=${key}&t=${searchTerm}`
     );
     // Parse JSON response into a JavaScript object
     const data = await response.json();
@@ -58,7 +58,7 @@ export default function OneVOne() {
   const getBlueMovie = async (searchTerm) => {
     // Make fetch request and store the response
     const response = await fetch(
-      `http://www.omdbapi.com/?apikey=${key}&t=${searchTerm}`
+      `https://www.omdbapi.com/?apikey=${key}&t=${searchTerm}`
     );
     // Parse JSON response into a JavaScript object
     const data = await response.json();
@@ -75,7 +75,7 @@ export default function OneVOne() {
   const getRandomChoice = async (searchTerm) => {
     // Make fetch request and store the response
     const response = await fetch(
-      `http://www.omdbapi.com/?apikey=${key}&t=${searchTerm}`
+      `https://www.omdbapi.com/?apikey=${key}&t=${searchTerm}`
     );
     // Parse JSON response into a JavaScript object
     const data = await response.json();
