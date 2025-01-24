@@ -6,28 +6,40 @@ export default function Help() {
     <div>
       <div className="title" style={{ color: "yellow" }}>
         <h1>Help!</h1>
-        <h2 style={{ textAlign: "left "}}>
+        <h2 style={{ textAlign: "left " }}>
           <br />
-          Red User adds up to ten movies to their list.
-          <br />
-          <br />
-          Blue User adds up to ten movies to their list.
+          <h2>1v1</h2>
+          - Red User choose a movie
           <br />
           <br />
-          You can add and delete movies from you list at any time.
+          - Blue User choose a movie
           <br />
           <br />
-          Head over to the 1v1 page and each enter your movie.
+          - Click to reveal your destiny!
+          <br />
+        {/* <h2>List Play</h2>
+          - Red User adds up to ten movies to their list.
           <br />
           <br />
-          Click to reveal your destiny!
+          - Blue User adds up to ten movies to their list.
           <br />
-        </h2>
-      </div>  
-        <div className="title" style={{ color: "yellow" }}>
+          <br />
+          - You can add and delete movies from you list at any time.
+          <br />
+          <br />
+          - Head over to the 1v1 page and each enter your movie.
+          <br />
+          <br />
+          - Click to reveal your destiny!
+          <br />
+          </h2>
+      </div>
+      <div className="title" style={{ color: "yellow" }}>
         <h1>Alternatively!</h1>
-        <h2 style={{ textAlign: "left "}}>
-          Each choose a movie from your partner's list and enter it into the 1v1, this way at least you had some say in what you're watching tonight!
+        <h2 style={{ textAlign: "left " }}>
+          Each choose a movie from your partner's list and enter it into the
+          1v1, this way at least you had some say in what you're watching
+          tonight! */}
         </h2>
         <br />
         <br />
